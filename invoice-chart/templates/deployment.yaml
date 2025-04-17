@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+fapiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "invoice-chart.fullname" . }}
@@ -39,7 +39,7 @@ spec:
             {{- toYaml . | nindent 12 }}
           {{- end }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: Never
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
