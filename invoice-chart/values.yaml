@@ -115,11 +115,11 @@ env:
  
 probes:
   liveness:
-    path: /health
+    path: /api/invoices
     initialDelaySeconds: 30
     periodSeconds: 10
   readiness:
-    path: /health/ready
+    path: /api/invoices
     initialDelaySeconds: 5
     periodSeconds: 10
   # targetMemoryUtilizationPercentage: 80
