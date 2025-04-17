@@ -142,3 +142,7 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+# values.yaml
+global:
+  namespace: "invoice-production"
